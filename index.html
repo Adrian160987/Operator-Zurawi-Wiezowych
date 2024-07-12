@@ -7,150 +7,138 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
         }
-        header {
-            background: url('Zdjęcie WhatsApp 2023-01-17 o 17.52.45_439c03d2.jpg') no-repeat center center/cover;
-            height: 100vh;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        header h1 {
-            font-size: 3em;
-            margin: 0;
+        h1, h2 {
             color: black;
-        }
-        header h2 {
-            font-size: 1.5em;
-            margin: 0;
-            color: black;
-        }
-        .container {
-            padding: 20px;
         }
         .section {
-            margin-bottom: 40px;
-        }
-        .section h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-        .section p {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            margin-bottom: 2em;
         }
         .gallery img {
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             object-fit: cover;
+            margin: 5px;
             cursor: pointer;
-            transition: transform 0.2s;
-        }
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
-        .lightbox {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity 0.3s;
         }
         .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
+            width: 100%;
+            height: auto;
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding-top: 10px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
         }
         .lightbox:target {
-            visibility: visible;
-            opacity: 1;
+            display: block;
         }
-        .languages {
-            display: flex;
-            justify-content: flex-end;
-            padding: 10px 20px;
+        .lightbox img {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
         }
-        .languages a {
-            color: black;
-            text-decoration: none;
-            margin-left: 10px;
-            font-size: 1.2em;
+        .lightbox:target img {
+            animation: zoom 0.6s;
+        }
+        @keyframes zoom {
+            from {transform: scale(0)}
+            to {transform: scale(1)}
         }
     </style>
 </head>
 <body>
-
-<header>
-    <div class="languages">
-        <a href="#polski">Polski</a>
-        <a href="#deutsch">Deutsch</a>
-    </div>
-    <h1>Adrian Ścibisz - usługi operatorskie Żurawi Wieżowych</h1>
-    <h2>Adrian Ścibisz - Turmdrehkranführer Dienstleistungen</h2>
-</header>
-
-<div class="container">
     <div class="section" id="polski">
-        <h2>O mnie</h2>
-        <p>Operator Żurawi Wieżowych, własna działalność gospodarcza od 2018 roku, obsługa Żurawi Wieżowych (uprawnienia Ż1).</p>
+        <h1>O mnie</h1>
+        <p>Prowadzę własną działalność gospodarczą od 2018 roku, obsługa żurawi wieżowych (uprawnienia Ż1).</p>
     </div>
     <div class="section" id="deutsch">
-        <h2>Über mich</h2>
+        <h1>Über mich</h1>
         <p>Turmdrehkranführer, eigenes Unternehmen seit 2018, Betrieb von Turmdrehkranen (Lizenz Ż1).</p>
     </div>
     <div class="section gallery">
-        <h2>Galeria / Galerie</h2>
-        <a href="#img1"><img src="Zdjęcie WhatsApp 2022-10-24 o 10.20.24_5ecc3f38.jpg" alt="Zdjęcie 1"></a>
-        <a href="#img2"><img src="Zdjęcie WhatsApp 2022-10-24 o 10.20.52_6b178cb5.jpg" alt="Zdjęcie 2"></a>
-        <a href="#img3"><img src="Zdjęcie WhatsApp 2023-08-11 o 15.31.16_a9621e29.jpg" alt="Zdjęcie 3"></a>
-        <a href="#img4"><img src="Zdjęcie WhatsApp 2023-11-14 o 19.50.03_492e06d7.jpg" alt="Zdjęcie 4"></a>
-        <a href="#img5"><img src="Zdjęcie WhatsApp 2023-11-29 o 13.52.22_61ee51d8.jpg" alt="Zdjęcie 5"></a>
-        <a href="#img6"><img src="Zdjęcie WhatsApp 2023-11-29 o 13.52.22_f93dca68.jpg" alt="Zdjęcie 6"></a>
-        <a href="#img7"><img src="Zdjęcie WhatsApp 2023-12-01 o 09.14.34_9479bc1f.jpg" alt="Zdjęcie 7"></a>
+        <h2>Galeria</h2>
+        <h2>Galerie</h2>
+        <a href="#img1"><img src="Zdjęcie WhatsApp 2022-10-24 o 10.20.24_5ecc3f38.jpg" alt="zdjęcie 1"></a>
+        <a href="#img2"><img src="Zdjęcie WhatsApp 2022-10-24 o 10.20.52_6b178cb5.jpg" alt="zdjęcie 2"></a>
+        <a href="#img3"><img src="Zdjęcie WhatsApp 2023-08-11 o 15.31.16_a9621e29.jpg" alt="zdjęcie 3"></a>
+        <a href="#img4"><img src="Zdjęcie WhatsApp 2023-11-14 o 19.50.03_47607801.jpg" alt="zdjęcie 4"></a>
+        <a href="#img5"><img src="Zdjęcie WhatsApp 2023-11-29 o 13.52.22_c7e5931c.jpg" alt="zdjęcie 5"></a>
+        <a href="#img6"><img src="Zdjęcie WhatsApp 2023-11-29 o 13.52.22_e31e1ad6.jpg" alt="zdjęcie 6"></a>
+        <a href="#img7"><img src="Zdjęcie WhatsApp 2023-12-01 o 09.14.34_2d1d7a66.jpg" alt="zdjęcie 7"></a>
+        <a href="#img8"><img src="Zdjęcie WhatsApp 2024-07-12 o 09.58.21_1038e15d.jpg" alt="zdjęcie 8"></a>
+        <a href="#img9"><img src="Zdjęcie WhatsApp 2024-07-12 o 09.59.28_982347f1.jpg" alt="zdjęcie 9"></a>
+        <a href="#img10"><img src="Zdjęcie WhatsApp 2024-07-12 o 10.00.26_4ef7fa55.jpg" alt="zdjęcie 10"></a>
+        <a href="#img11"><img src="Zdjęcie WhatsApp 2024-07-12 o 10.00.49_70a8689e.jpg" alt="zdjęcie 11"></a>
+        <a href="#img12"><img src="Zdjęcie WhatsApp 2024-07-12 o 10.02.18_a39e83cc.jpg" alt="zdjęcie 12"></a>
+        <a href="#img13"><img src="Zdjęcie WhatsApp 2024-07-12 o 10.02.39_abfe620d.jpg" alt="zdjęcie 13"></a>
+        <a href="#img14"><img src="Zdjęcie WhatsApp 2024-07-12 o 10.03.42_bf6fff29.jpg" alt="zdjęcie 14"></a>
+        <a href="#img15"><img src="Zdjęcie WhatsApp 2024-07-12 o 10.06.06_7a51f0ab.jpg" alt="zdjęcie 15"></a>
+        <a href="#img16"><img src="Zdjęcie WhatsApp 2024-07-12 o 10.06.30_4a8eb5c7.jpg" alt="zdjęcie 16"></a>
     </div>
+
+    <div id="img1" class="lightbox">
+        <img src="Zdjęcie WhatsApp 2022-10-24 o 10.20.24_5ecc3f38.jpg" alt="zdjęcie 1">
+    </div>
+    <div id="img2" class="lightbox">
+        <img src="Zdjęcie WhatsApp 2022-10-24 o 10.20.52_6b178cb5.jpg" alt="zdjęcie 2">
+    </div>
+    <div id="img3" class="lightbox">
+        <img src="Zdjęcie WhatsApp 2023-08-11 o 15.31.16_a9621e29.jpg" alt="zdjęcie 3">
+    </div>
+    <div id="img4" class="lightbox">
+        <img src="Zdjęcie WhatsApp 2023-11-14 o 19.50.03_47607801.jpg" alt="zdjęcie 4">
+    </div>
+    <div id="img5" class="lightbox">
+        <img src="Zdjęcie WhatsApp 2023-11-29 o 13.52.22_c7e5931c.jpg" alt="zdjęcie 5">
+    </div>
+    <div id="img6" class="lightbox">
+        <img src="Zdjęcie WhatsApp 2023-11-29 o 13.52.22_e31e1ad6.jpg" alt="zdjęcie 6">
+    </div>
+    <div id="img7" class="lightbox">
+        <img src="Zdjęcie WhatsApp 2023-12-01 o 09.14.34_2d1d7a66.jpg" alt="zdjęcie 7">
+    </div>
+    <div id="img8" class="lightbox">
+        <img src="Zdjęcie WhatsApp 2024-07-12 o 09.58.21_1038e15d.jpg" alt="zdjęcie 8">
+    </div>
+    <div id="img9" class="lightbox">
+        <img src="Zdjęcie WhatsApp 2024-07-12 o 09.59.28_982347f1.jpg" alt="zdjęcie 9">
+    </div>
+    <div id="img10" class="lightbox">
+        <img src="Zdjęcie WhatsApp 2024-07-12 o 10.00.26_4ef7fa55.jpg" alt="zdjęcie 10">
+    </div>
+    <div id="img11" class="lightbox">
+        <img src="Zdjęcie WhatsApp 2024-07-12 o 10.00.49_70a8689e.jpg" alt="zdjęcie 11">
+    </div>
+    <div id="img12" class="lightbox">
+        <img src="Zdjęcie WhatsApp 2024-07-12 o 10.02.18_a39e83cc.jpg" alt="zdjęcie 12">
+    </div>
+    <div id="img13" class="lightbox">
+        <img src="Zdjęcie WhatsApp 2024-07-12 o 10.02.39_abfe620d.jpg" alt="zdjęcie 13">
+    </div>
+    <div id="img14" class="lightbox">
+        <img src="Zdjęcie WhatsApp 2024-07-12 o 10.03.42_bf6fff29.jpg" alt="zdjęcie 14">
+    </div>
+    <div id="img15" class="lightbox">
+        <img src="Zdjęcie WhatsApp 2024-07-12 o 10.06.06_7a51f0ab.jpg" alt="zdjęcie 15">
+    </div>
+    <div id="img16" class="lightbox">
+        <img src="Zdjęcie WhatsApp 2024-07-12 o 10.06.30_4a8eb5c7.jpg" alt="zdjęcie 16">
+    </div>
+
     <div class="section" id="kontakt">
-        <h2>Kontakt / Kontakt</h2>
+        <h2>Kontakt</h2>
+        <h2>Kontakt</h2>
         <p>Możesz się ze mną skontaktować przez e-mail: <a href="mailto:adrian.s@tlen.pl">adrian.s@tlen.pl</a></p>
         <p>Sie können mich per E-Mail kontaktieren: <a href="mailto:adrian.s@tlen.pl">adrian.s@tlen.pl</a></p>
     </div>
-</div>
-
-<div id="img1" class="lightbox">
-    <img src="Zdjęcie WhatsApp 2022-10-24 o 10.20.24_5ecc3f38.jpg" alt="Zdjęcie 1">
-</div>
-<div id="img2" class="lightbox">
-    <img src="Zdjęcie WhatsApp 2022-10-24 o 10.20.52_6b178cb5.jpg" alt="Zdjęcie 2">
-</div>
-<div id="img3" class="lightbox">
-    <img src="Zdjęcie WhatsApp 2023-08-11 o 15.31.16_a9621e29.jpg" alt="Zdjęcie 3">
-</div>
-<div id="img4" class="lightbox">
-    <img src="Zdjęcie WhatsApp 2023-11-14 o 19.50.03_492e06d7.jpg" alt="Zdjęcie 4">
-</div>
-<div id="img5" class="lightbox">
-    <img src="Zdjęcie WhatsApp 2023-11-29 o 13.52.22_61ee51d8.jpg" alt="Zdjęcie 5">
-</div>
-<div id="img6" class="lightbox">
-    <img src="Zdjęcie WhatsApp 2023-11-29 o 13.52.22_f93dca68.jpg" alt="Zdjęcie 6">
-</div>
-<div id="img7" class="lightbox">
-    <img src="Zdjęcie WhatsApp 2023-12-01 o 09.14.34_9479bc1f.jpg" alt="Zdjęcie 7">
-</div>
-
 </body>
 </html>
